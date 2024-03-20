@@ -17,6 +17,7 @@ F103c8t6 approximately 1 USD
 - Manage up to 8 VL53L0X sensors simultaneously through the TCA9548 I2C multiplexer.
 - Read distance data from each sensor and calculate the average to reduce random errors.
 - Transmit average distance data through serial port in a specific format.
+  ![./doc/gui.png](./doc/gui.png)
 
 ## Hardware Requirements
 

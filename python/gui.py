@@ -28,32 +28,34 @@ def draw_radar(screen, center, radius, distances):
     # 清除屏幕
     screen.fill(colors['background'])
     
-    # 繪製雷達圈和線
+    # 绘制雷达圈和线
     for i in range(1, 6):
         pygame.draw.circle(screen, colors['grid'], center, radius * i / 5, 1)
     for i in range(8):
-        angle = math.radians(45 * i - 90)  # 調整-90度從頂部開始
+        angle = math.radians(45 * i - 90)  # 调整-90度从顶部开始
         x = center[0] + radius * math.cos(angle)
         y = center[1] + radius * math.sin(angle)
         pygame.draw.line(screen, colors['grid'], center, (x, y), 1)
     
-    # 繪製距離扇形
+    # 绘制距离扇形
     for i, distance in enumerate(distances):
-        norm_distance = min(distance / 2000, 1)  # 正常化距離以適應雷達
-        # 根據距離設定不同的顏色
+        norm_distance = min(distance / 2000, 1)  # 正常化距离以适应雷达
+        # 根据距离设置不同的颜色
         if norm_distance < 1/3:
-            color = (255, 0, 0)  # 紅色
+            color = (255, 0, 0)  # 红色
         elif norm_distance < 2/3:
-            color = (255, 255, 0)  # 黃色
+            color = (255, 255, 0)  # 黄色
         else:
-            color = (0, 255, 0)  # 綠色
-        start_angle = math.radians(45 * i - 90)  # 調整起始點在頂部
-        end_angle = math.radians(45 * (i + 1) - 90)
-        # 定義扇形的三個點：中心點、起始點、終點
+            color = (0, 255, 0)  # 绿色
+        center_angle = math.radians(45 * i - 90 + 22.5)  # 扇形中心点，偏移量为半个间隔
+        start_angle = center_angle - math.radians(12.5)  # 扇形开始角度
+        end_angle = center_angle + math.radians(12.5)  # 扇形结束角度
+        # 定义扇形的三个点：中心点、起始点、结束点
         start_point = (center[0] + norm_distance * radius * math.cos(start_angle), center[1] + norm_distance * radius * math.sin(start_angle))
         end_point = (center[0] + norm_distance * radius * math.cos(end_angle), center[1] + norm_distance * radius * math.sin(end_angle))
-        # 使用 pygame.draw.polygon 繪製填充的扇形
+        # 使用 pygame.draw.polygon 绘制填充的扇形
         pygame.draw.polygon(screen, color, [center, start_point, end_point])
+
 
 
 # 從串行端口讀取一個封包的函數

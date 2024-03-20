@@ -1,6 +1,10 @@
 # 多個 VL53L0X 感測器數據讀取系統
 
+Video:
+https://youtu.be/OrfpyjqpGTM
+
 這個項目利用 Arduino 和 TCA9548 I2C 多路轉換器來讀取多個 VL53L0X 激光測距感測器的數據。
+![./doc/hw.jpeg](./doc/hw.jpeg)
 
 ## 功能
 

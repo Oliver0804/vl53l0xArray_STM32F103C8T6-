@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "VL52ARRAR_F103",
+			"path": "."
+		}
+	],
+	"settings": {
+		"nrf-connect.topdir": "${nrf-connect.sdk:2.5.2}",
+		"files.associations": {
+			"log.h": "c",
+			"sensor.h": "c",
+			"devicetree.h": "c"
+		}
+	}
+}

@@ -1,66 +1,65 @@
-# 多個 VL53L0X 感測器數據讀取系統
+# Multiple VL53L0X Sensor Data Reading System
 
 Video:
 https://youtu.be/OrfpyjqpGTM
 
-這個項目利用 Arduino 和 TCA9548 I2C 多路轉換器來讀取多個 VL53L0X 激光測距感測器的數據。
-這是一個低成本的避障方案，成本預估會在 10usd 以下。
-VL53L0x 約 0.9usd
-TCA9548 約 0.2usd
-F103c8t6 約 1usd
-![./doc/hw.jpeg](./doc/hw.jpeg)
+This project utilizes an Arduino and a TCA9548 I2C multiplexer to read data from multiple VL53L0X laser distance sensors.
+This is a low-cost obstacle avoidance solution, with an estimated cost under 10 USD.
+VL53L0x approximately 0.9 USD
+TCA9548 approximately 0.2 USD
+F103c8t6 approximately 1 USD
 
-## 功能
+## Features
 
-- 通過 TCA9548 I2C 多路轉換器同時管理最多 8 個 VL53L0X 感測器。
-- 從每個感測器讀取距離數據並計算平均值，以減少隨機誤差。
-- 通過串行埠以特定格式傳送平均距離數據。
+- Manage up to 8 VL53L0X sensors simultaneously through the TCA9548 I2C multiplexer.
+- Read distance data from each sensor and calculate the average to reduce random errors.
+- Transmit average distance data through serial port in a specific format.
 
-## 硬件要求
+## Hardware Requirements
 
-- Arduino 或相容板
-- TCA9548 I2C 多路轉換器
-- 最多 8 個 VL53L0X 激光測距感測器
-- 適當的連接線
+- Arduino or compatible board
+- TCA9548 I2C multiplexer
+- Up to 8 VL53L0X laser distance sensors
+- Appropriate connecting wires
 
-## 接線指南
+## Wiring Guide
 
-將 TCA9548 的 SDA 和 SCL 接線至 Arduino 的 SDA_PIN 和 SCL_PIN，並將各個 VL53L0X 感測器連接至 TCA9548 的各個通道。
+Connect TCA9548's SDA and SCL wires to the Arduino's SDA_PIN and SCL_PIN, and connect each VL53L0X sensor to the respective channels of TCA9548.
 
-## 使用說明
+## Instructions
 
-1. 將代碼上傳至您的 Arduino。
-2. 打開串行監視器查看來自感測器的數據。
-3. 觀察串行埠輸出，確認感測器數據正確傳輸。
+1. Upload the code to your Arduino.
+2. Open the serial monitor to view data from the sensors.
+3. Observe the serial port output to ensure the sensor data is being transmitted correctly.
 
-## 代碼說明
+## Code Description
 
-代碼包含以下幾個部分：
+The code includes the following sections:
 
-- 初始化並設置串行通訊速率。
-- 初始化 TCA9548 I2C 多路轉換器。
-- 循環讀取每個通道的 VL53L0X 感測器數據並存儲。
-- 計算每個感測器的平均距離並通過串行埠發送。
+- Initialize and set the serial communication rate.
+- Initialize the TCA9548 I2C multiplexer.
+- Loop to read data from each VL53L0X sensor on every channel and store.
+- Calculate the average distance for each sensor and transmit through the serial port.
 
-## Python 工具
+## Python Tools
 
-安裝相依
+Install dependencies
 
 ```
 pip install -r requirements.txt
 ```
 
-運行
+Run
 
 ```
 python gui.py
 ```
 
-## 注意事項
+## Note
 
-- 確保所有感測器均正確連接且沒有地址衝突。
-- 可能需要根據您的硬件設置調整 I2C 地址和引腳配置。
+- Ensure all sensors are correctly connected and there are no address conflicts.
+- You may need to adjust the I2C addresses and pin configurations according to your hardware setup.
 
-## 貢獻
+## Contribution
 
-如果您有任何建議或改進，歡迎提交 pull request 或開啟 issue。
+If you have any suggestions or improvements, feel free to submit a pull request or open an issue.

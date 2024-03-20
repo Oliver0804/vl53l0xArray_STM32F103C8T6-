@@ -63,3 +63,5 @@ python gui.py
 ## Contribution
 
 If you have any suggestions or improvements, feel free to submit a pull request or open an issue.
+
+https://www.facebook.com/groups/ardupilot.taipei/

@@ -1,4 +1,4 @@
-# Multiple VL53L0X Sensor Data Reading System 
+# Multiple VL53L0X Sensor Data Reading System
 
 Video:[LINK](https://youtu.be/OrfpyjqpGTM)
 
@@ -9,6 +9,8 @@ This is a low-cost obstacle avoidance solution, with an estimated cost under 10 
 VL53L0x approximately 0.9 USD
 TCA9548 approximately 0.2 USD
 F103c8t6 approximately 1 USD
+
+![./doc/hw.jpeg](./doc/hw.jpeg)
 
 ## Features
 

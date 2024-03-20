@@ -4,6 +4,10 @@ Video:
 https://youtu.be/OrfpyjqpGTM
 
 這個項目利用 Arduino 和 TCA9548 I2C 多路轉換器來讀取多個 VL53L0X 激光測距感測器的數據。
+這是一個低成本的避障方案，成本預估會在 10usd 以下。
+VL53L0x 約 0.9usd
+TCA9548 約 0.2usd
+F103c8t6 約 1usd
 ![./doc/hw.jpeg](./doc/hw.jpeg)
 
 ## 功能
